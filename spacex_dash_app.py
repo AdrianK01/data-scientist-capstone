@@ -68,7 +68,7 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
 # Add a callback function for `site-dropdown` as input, `success-pie-chart` as output
 @app.callback(
      Output(component_id='success-pie-chart',component_property='figure'),
-     [Input(component_id='site_dropdown',component_property='value')]
+     [Input(component_id='site_dropdown',component_property='value')])
 def get_pie_chart(entered_site):
     if entered_site == 'ALL':
         df  = spacex_df[spacex_df['class'] == 1]
